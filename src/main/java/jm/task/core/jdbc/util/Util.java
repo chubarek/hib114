@@ -13,6 +13,7 @@ public class Util {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/jdbc";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root1111";
+    private static final SessionFactory sessionFactory = buildSessionFactory();
 
     public static Connection connectJDBC() {
         Connection con = null;
@@ -27,8 +28,6 @@ public class Util {
         System.out.println(con);
         return con;
     }
-
-    private static final SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
         SessionFactory sessionFactory = new Configuration()
